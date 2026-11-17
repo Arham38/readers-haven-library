@@ -1,0 +1,244 @@
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #1f2933;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Header & Navigation */
+.site-header {
+  background-color: #1b365d;
+  color: #ffffff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo span {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #2b4c7e;
+  color: #ffffff;
+}
+
+/* Collections Hero Banner */
+.page-hero {
+  background-color: #eaf0f6;
+  border-bottom: 1px solid #d1dce5;
+  padding: 2.75rem 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.2rem;
+  color: #1b365d;
+  margin-bottom: 0.5rem;
+}
+
+.page-hero p {
+  color: #4a5568;
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+}
+
+.category-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.category-pills a {
+  background-color: #ffffff;
+  color: #1b365d;
+  border: 1px solid #1b365d;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.category-pills a:hover {
+  background-color: #1b365d;
+  color: #ffffff;
+}
+
+/* Collection Sections & Book Grid */
+.collections-main {
+  padding: 2.5rem 0 4rem;
+}
+
+.collection-section {
+  margin-bottom: 3.25rem;
+}
+
+.section-header {
+  border-left: 4px solid #c58b2a;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.65rem;
+  color: #1b365d;
+}
+
+.section-header p {
+  color: #52606d;
+  font-size: 0.95rem;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.book-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.book-badge {
+  align-self: flex-start;
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.book-badge.ref-badge {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.book-card h3 {
+  font-size: 1.15rem;
+  color: #102a43;
+  margin-bottom: 0.25rem;
+}
+
+.book-author {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #627d98;
+  margin-bottom: 0.75rem;
+}
+
+.book-desc {
+  font-size: 0.92rem;
+  color: #334e68;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.book-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #486581;
+  border-top: 1px solid #f0f4f8;
+  padding-top: 0.65rem;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #1b365d;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 900px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
