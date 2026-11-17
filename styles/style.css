@@ -426,3 +426,55 @@ footer,
         font-size: 28px;
     }
 }
+
+/* ===== Services Page (Hafeez) ===== */
+.svc-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.svc-intro {
+  margin-bottom: 24px;
+}
+
+.svc-intro p {
+  max-width: 60ch;
+  line-height: 1.6;
+}
+
+.svc-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.svc-card {
+  border: 1px solid #d9d4c7;
+  border-left: 5px solid #2f5d50;
+  border-radius: 6px;
+  padding: 18px 20px;
+  background: #fff;
+}
+
+.svc-card h3 {
+  margin: 0 0 6px;
+}
+
+.svc-hours {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: #2f5d50;
+}
+
+.svc-steps {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .svc-list {
+    grid-template-columns: 1fr;
+  }
+}
