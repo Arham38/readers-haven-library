@@ -6,14 +6,19 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
 }
 
-/* Navigation Bar */
-.navbar {
+/* Navigation Bar (Shared across all pages) */
+.navbar,
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +26,26 @@ body {
     padding: 15px 50px;
 }
 
+.nav-container {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo {
     color: #fff;
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    font-weight: 400;
+    font-size: 16px;
+    color: #cbd5e1;
 }
 
 .nav-links {
@@ -42,11 +63,12 @@ body {
     transition: background 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     background-color: #34495e;
 }
 
-/* Hero Section */
+/* Hero Section (Home & Shared) */
 .hero {
     background-color: #3498db;
     color: white;
@@ -65,7 +87,7 @@ body {
     margin: 0 auto;
 }
 
-/* Info Section */
+/* Info Section (Home Page) */
 .info-section {
     display: flex;
     justify-content: center;
@@ -77,7 +99,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 350px;
 }
 
@@ -96,8 +118,150 @@ body {
     margin-bottom: 8px;
 }
 
-/* Footer */
-footer {
+/* ==========================================
+   Collections Page Styles
+   ========================================== */
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.page-hero {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    max-width: 650px;
+    margin: 0 auto 24px;
+    font-size: 17px;
+}
+
+.category-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-pills a {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 8px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.category-pills a:hover {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+.collections-main {
+    padding: 40px 0 60px;
+}
+
+.collection-section {
+    margin-bottom: 48px;
+}
+
+.section-header {
+    border-left: 4px solid #3498db;
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+.section-header p {
+    color: #555;
+    font-size: 15px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.book-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.book-badge {
+    align-self: flex-start;
+    background-color: #e6f4ea;
+    color: #1e7e34;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.book-badge.ref-badge {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.book-card h3 {
+    font-size: 19px;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.book-author {
+    font-size: 14px;
+    font-style: italic;
+    color: #627d98;
+    margin-bottom: 12px;
+}
+
+.book-desc {
+    font-size: 15px;
+    color: #444;
+    flex-grow: 1;
+    margin-bottom: 16px;
+}
+
+.book-meta {
+    font-size: 13px;
+    font-weight: 600;
+    color: #486581;
+    border-top: 1px solid #f0f4f8;
+    padding-top: 10px;
+}
+
+/* Footer (Shared across all pages) */
+footer,
+.site-footer {
     text-align: center;
     padding: 20px;
     background-color: #2c3e50;
@@ -106,27 +270,45 @@ footer {
 }
 
 /* ==========================================
-   CSS Media Query (Mobile Responsiveness)
+   CSS Media Queries (Mobile & Tablet)
    ========================================== */
+@media (max-width: 900px) {
+    .book-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-    .navbar {
+    .navbar,
+    .site-header,
+    .nav-container {
         flex-direction: column;
         padding: 15px;
     }
-    
+
     .nav-links {
         margin-top: 15px;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .info-section {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .info-card {
         width: 100%;
         max-width: 400px;
+    }
+
+    .page-hero h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .book-grid {
+        grid-template-columns: 1fr;
     }
 }
